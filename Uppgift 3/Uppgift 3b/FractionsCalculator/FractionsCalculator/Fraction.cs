@@ -34,9 +34,14 @@ namespace FractionsCalculator
             }
         }
 
-        public bool isNegative(int numerator, int denominator)
+        public static bool isNegative(Fraction fOne, Fraction fTwo)
         {
-            if (numerator < 0 || denominator < 0)
+            if (fOne.getNumerator < 0 || fOne.getDenominator < 0)
+            {
+                return true;
+            }
+
+            else if (fTwo.getNumerator < 0 || fTwo.getDenominator < 0)
             {
                 return true;
             }
@@ -49,15 +54,17 @@ namespace FractionsCalculator
         
         public static Fraction Add(Fraction fOne, Fraction fTwo)
         {
-            return new Fraction(fOne.getNumerator * fTwo.getDenominator + fTwo.getNumerator * fOne.getDenominator, fOne.getDenominator * fTwo.getDenominator);
+            Fraction fThree = new Fraction(fOne.getNumerator * fTwo.getDenominator + fTwo.getNumerator * fOne.getDenominator, fOne.getDenominator * fTwo.getDenominator);
+            return fThree;
         }
 
         public static Fraction Multiply (Fraction fOne, Fraction fTwo)
         {
-            return new Fraction(fOne.getNumerator * fTwo.getNumerator, fOne.getDenominator * fTwo.getDenominator);
+            Fraction fThree = new Fraction(fOne.getNumerator * fTwo.getNumerator, fOne.getDenominator * fTwo.getDenominator);
+            return fThree;
         }
 
-        public bool isEqualTo (Fraction fOne, Fraction fTwo)
+        public static bool isEqualTo (Fraction fOne, Fraction fTwo)
         {
             if (fOne.getNumerator / fOne.getDenominator == fTwo.getNumerator / fTwo.getDenominator)
             {
@@ -70,6 +77,9 @@ namespace FractionsCalculator
             }
         }
 
-        //toString
+        public static string toString(Fraction fThree)
+        {
+            return string.Format("{0}/{1}", fThree.getNumerator, fThree.getDenominator);
+        }
     }
 }
