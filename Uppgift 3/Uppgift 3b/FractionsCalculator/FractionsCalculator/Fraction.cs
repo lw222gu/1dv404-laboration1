@@ -23,10 +23,15 @@ namespace FractionsCalculator
             set { _denominator = value; }
         }
 
-        public Fraction()
+        public Fraction(int numerator, int denominator)
         {
-            getNumerator = _numerator;
-            getDenominator = _denominator;
+            getNumerator = numerator;
+            getDenominator = denominator;
+
+            if (denominator == 0)
+            {
+                throw new Exception("Nämnaren kan inte vara 0, mata in ett nytt nummer.");
+            }
         }
 
         public bool isNegative(int numerator, int denominator)
@@ -41,6 +46,19 @@ namespace FractionsCalculator
                 return false;
             }
         }
+        
+        public static Fraction Add(Fraction fOne, Fraction fTwo)
+        {
+            return new Fraction(fOne.getNumerator * fTwo.getDenominator + fTwo.getNumerator * fOne.getDenominator, fOne.getDenominator * fTwo.getDenominator);
+        }
 
+        public static Fraction Multiply (Fraction fOne, Fraction fTwo)
+        {
+            return new Fraction(fOne.getNumerator * fTwo.getNumerator, fOne.getDenominator * fTwo.getDenominator);
+        }
+
+        //isEqualTo
+
+        //toString
     }
 }
