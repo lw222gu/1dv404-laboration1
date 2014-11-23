@@ -29,6 +29,9 @@ namespace Palindrom
             copyOfInput = new string(stringArray);
 
             //Jämför strängarna och skriv ut resultatet
+            //"Sirap i Paris" är ett palindrom.
+            //"Hejsan" är inte ett palindrom.
+
             equal = input.Equals(copyOfInput, StringComparison.Ordinal);
             
             if (equal == true)
