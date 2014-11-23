@@ -57,7 +57,18 @@ namespace FractionsCalculator
             return new Fraction(fOne.getNumerator * fTwo.getNumerator, fOne.getDenominator * fTwo.getDenominator);
         }
 
-        //isEqualTo
+        public bool isEqualTo (Fraction fOne, Fraction fTwo)
+        {
+            if (fOne.getNumerator / fOne.getDenominator == fTwo.getNumerator / fTwo.getDenominator)
+            {
+                return true;
+            }
+
+            else 
+            {
+                return false;
+            }
+        }
 
         //toString
     }
