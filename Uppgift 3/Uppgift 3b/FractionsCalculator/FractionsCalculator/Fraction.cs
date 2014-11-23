@@ -30,7 +30,7 @@ namespace FractionsCalculator
 
             if (denominator == 0)
             {
-                throw new Exception("Nämnaren kan inte vara 0, mata in ett nytt nummer.");
+                throw new FormatException("Nämnaren kan inte vara 0, mata in ett nytt nummer.");
             }
         }
 
